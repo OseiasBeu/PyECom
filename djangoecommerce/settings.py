@@ -24,7 +24,6 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = '-uhpfb-=5&l!s0h5sn8*(3a^slvqng24z7b$0yt!a8w+2*$m9#'
 SECRET_KEY = os.getenv('SECRET_KEY','123')
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -151,6 +150,11 @@ EMAIL_HOST_USER = ''
 EMAIL_HOST_PASSWORD = ''
 DEFAULT_FROM_EMAIL = 'yehiorGlobal@gmail.com'
 # DEFAULT_FROM_EMAIL = 'beuoseias@gmail.com'
+
+#Auth
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'index'
+
 
 
 django_heroku.settings(locals())

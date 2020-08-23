@@ -15,14 +15,15 @@ Including another URLconf
 """
 from django.conf.urls import url,include
 from django.contrib import admin
-# from catalog import  views as views_catalog
 from core import views
+from django.contrib.auth.views import login, logout
 
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^contato/$', views.contact, name='contact'),
-    # url(r'^produto/$', views.product, name='product'),
+    url(r'^entrar/$', login, {'template_name':'login.html'}, name='login'),
+    url(r'^sair/$', logout, {'next_page':'index'}, name='logout'),
     url(r'^catalogo/',include(('catalog.urls','products_list'), namespace='catalog')),
     url(r'^admin/', admin.site.urls),
 ]
