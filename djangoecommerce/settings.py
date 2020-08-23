@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     #apps:
     'core',
     'catalog',
+    'accounts',
 ]
 
 # MIDDLEWARE_CLASSES = [
@@ -154,6 +155,7 @@ DEFAULT_FROM_EMAIL = 'yehiorGlobal@gmail.com'
 #Auth
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'index'
+AUTH_USER_MODEL = 'accounts.User'
 
 
 
