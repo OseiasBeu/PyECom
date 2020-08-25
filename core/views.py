@@ -9,6 +9,7 @@ from django.conf import settings
 from django.contrib.auth.forms import UserCreationForm
 from django.views.generic import  View, TemplateView, CreateView
 from django.contrib.auth import get_user_model
+from django.contrib import messages
 
 # Create your views here.
 
@@ -19,29 +20,17 @@ class IndexView(TemplateView):
     
 index = IndexView.as_view()
 
-# def  index(request):
-#     return render(request, 'index.html')
-
 
 def  contact(request):
     success = False
     form = ContactForm(request.POST or None)
     if form.is_valid():
         form.send_Mail()
-        success = True             
+        success = True   
+    elif request.method == 'POST':
+        messages.error(request, 'Formulário Inválido')          
     context = {
         'form': form,
         'success': success
     }
     return render(request, 'contact.html',context)
-
-
-# class RegisterView(CreateView):
-#     form_class = UserCreationForm
-#     template_name = 'register.html'
-#     model = User
-#     success_url = reverse_lazy('index')
-
-# register = RegisterView.as_view()
-
-
