@@ -6,7 +6,6 @@ from django.db import models
 class CartItemManager(models.Manager):
 
     def add_item(self, cart_key, product):
-        # cart_item, created = self.get_or_create(cart_key=cart_key, product=product,)
         if self.filter(cart_key=cart_key, product=product).exists():
             created = False 
             cart_item = self.get(cart_key=cart_key,product=product)
