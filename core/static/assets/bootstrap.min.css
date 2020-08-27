@@ -4673,20 +4673,20 @@ textarea.input-group-sm>.form-control, textarea.input-group-sm>.input-group-addo
 }
 
 .navbar-default .navbar-brand {
-    color: #ffffff
+    color: #cbbc19
 }
 
 .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
-    color: #cbbc19;
+    color: #19cbc2;
     background-color: transparent
 }
 
 .navbar-default .navbar-text {
-    color: #ffffff
+    color: #cbbc19
 }
 
 .navbar-default .navbar-nav>li>a {
-    color: #ffffff
+    color: #cbbc19
 }
 
 .navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
@@ -4695,7 +4695,7 @@ textarea.input-group-sm>.form-control, textarea.input-group-sm>.input-group-addo
 }
 
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
-    color: #ffffff;
+    color: #cbbc19;
     background-color: #cbbc19
 }
 
@@ -4713,7 +4713,7 @@ textarea.input-group-sm>.form-control, textarea.input-group-sm>.input-group-addo
 }
 
 .navbar-default .navbar-toggle .icon-bar {
-    background-color: #ffffff
+    background-color: #cbbc19
 }
 
 .navbar-default .navbar-collapse, .navbar-default .navbar-form {
