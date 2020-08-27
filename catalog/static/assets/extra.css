@@ -54,3 +54,21 @@
     background-color: #000000;
     border-color: #000;
 }
+
+.navbar-default .navbar-nav>li>a {
+    color: #ffffff;
+}
+
+
+
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
+    color: #18bc9c;
+    background-color: transparent;
+}
+
+
+.btn-default:focus, .btn-default.focus {
+    color: #ffffff;
+    background-color: #182138;
+    border-color: #182138;
+}

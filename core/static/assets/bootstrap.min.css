@@ -4673,7 +4673,7 @@ textarea.input-group-sm>.form-control, textarea.input-group-sm>.input-group-addo
 }
 
 .navbar-default .navbar-brand {
-    color: #FFFFFF
+    color: #ffffff;
 }
 
 .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
@@ -4686,7 +4686,7 @@ textarea.input-group-sm>.form-control, textarea.input-group-sm>.input-group-addo
 }
 
 .navbar-default .navbar-nav>li>a {
-    color: #FFFFF
+    color: #ffffff;
 }
 
 .navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
