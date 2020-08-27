@@ -1,3 +1,12 @@
 .margin-top {
     margin-top: 2em;
 }
+
+.navbar{
+    border-width: 0px 0px 1px 0px;
+    background-color: #000000;
+}
+
+.navbar-default {
+    background-color: #000000;
+}
