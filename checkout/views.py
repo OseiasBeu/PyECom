@@ -14,8 +14,8 @@ from django.views.generic import (
 from django.forms import modelformset_factory
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
-# from django.core.urlresolvers import reverse
-from django.urls import reverse
+from django.core.urlresolvers import reverse
+# from django.urls import reverse
 from django.conf import settings
 from django.http import HttpResponse
 

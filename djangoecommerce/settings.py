@@ -48,15 +48,17 @@ INSTALLED_APPS = [
     'checkout',
 ]
 
-MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
+MIDDLEWARE= [
+    'django.middleware.security.SecurityMiddleware',   
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    # 'django.contrib.auth.middleware.AuthenticationMiddleware',
+    # AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+   
 
     'checkout.middleware.cart_item_middleware',
 ]
@@ -82,7 +84,7 @@ TEMPLATES = [
 ]
 
 
-WSGI_APPLICATION = 'djangoecommerce.wsgi.application'
+# WSGI_APPLICATION = 'djangoecommerce.wsgi.application'
 
 
 # Database
