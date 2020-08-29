@@ -146,7 +146,8 @@ STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 EMAIL_HOST = ''
 EMAIL_HOST_USER = ''
 EMAIL_HOST_PASSWORD = ''
-DEFAULT_FROM_EMAIL = 'admin@djangoecommerce.com'
+DEFAULT_FROM_EMAIL = 'beuoseias@gmail.com'
+# 'yehiorGlobal@gmail.com'
 
 # auth
 LOGIN_URL = 'login'
@@ -167,6 +168,14 @@ MESSAGE_TAGS = {
     messages_constants.WARNING: 'warning',
     messages_constants.ERROR: 'danger',
 }
+
+PAGSEGURO_TOKEN = ''
+PAGSEGURO_EMAIL = 'contato@gilenofilho.com.br'
+PAGSEGURO_SANDBOX = True
+
+PAYPAL_TEST = True
+PAYPAL_EMAIL = 'contato@gilenofilho.com.br'
+
 
 try:
     from .local_settings import *
