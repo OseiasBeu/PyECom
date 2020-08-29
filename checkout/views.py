@@ -3,8 +3,6 @@
 from pagseguro import PagSeguro
 
 from paypal.standard.forms import PayPalPaymentsForm
-from paypal.standard.models import ST_PP_COMPLETED
-from paypal.standard.ipn.signals import valid_ipn_received
 
 from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import get_object_or_404, redirect
@@ -15,7 +13,6 @@ from django.forms import modelformset_factory
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.urlresolvers import reverse
-# from django.urls import reverse
 from django.conf import settings
 from django.http import HttpResponse
 
@@ -89,7 +86,6 @@ class CheckoutView(LoginRequiredMixin, TemplateView):
             order = Order.objects.create_order(
                 user=request.user, cart_items=cart_items
             )
-            cart_items.delete()
         else:
             messages.info(request, 'Não há itens no carrinho de compras')
             return redirect('checkout:cart_item')
@@ -104,7 +100,7 @@ class OrderListView(LoginRequiredMixin, ListView):
     paginate_by = 10
 
     def get_queryset(self):
-        return Order.objects.filter(user=self.request.user).order_by('-pk')
+        return Order.objects.filter(user=self.request.user)
 
 
 class OrderDetailView(LoginRequiredMixin, DetailView):
@@ -150,9 +146,6 @@ class PaypalView(LoginRequiredMixin, TemplateView):
         paypal_dict['cancel_return'] = self.request.build_absolute_uri(
             reverse('checkout:order_list')
         )
-        paypal_dict['notify_url'] = self.request.build_absolute_uri(
-            reverse('paypal-ipn')
-        )
         context['form'] = PayPalPaymentsForm(initial=paypal_dict)
         return context
 
@@ -175,20 +168,6 @@ def pagseguro_notification(request):
         else:
             order.pagseguro_update_status(status)
     return HttpResponse('OK')
-
-
-def paypal_notification(sender, **kwargs):
-    ipn_obj = sender
-    if ipn_obj.payment_status == ST_PP_COMPLETED and \
-        ipn_obj.receiver_email == settings.PAYPAL_EMAIL:
-        try:
-            order = Order.objects.get(pk=ipn_obj.invoice)
-            order.complete()
-        except Order.DoesNotExist:
-            pass
-
-
-valid_ipn_received.connect(paypal_notification)
 
 
 create_cartitem = CreateCartItemView.as_view()
