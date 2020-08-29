@@ -55,7 +55,6 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
@@ -81,6 +80,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'djangoecommerce.wsgi.application'
 
@@ -145,8 +145,8 @@ STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 # E-mail
 EMAIL_HOST = ''
 EMAIL_HOST_USER = ''
-EMAIL_HOST_PASSWORD = ''
-DEFAULT_FROM_EMAIL = 'beuoseias@gmail.com'
+EMAIL_HOST_PASSWORD = 'VamosDominarOMundo'
+DEFAULT_FROM_EMAIL = 'yehiorGlobal@gmail.com'
 # 'yehiorGlobal@gmail.com'
 
 # auth
@@ -169,12 +169,12 @@ MESSAGE_TAGS = {
     messages_constants.ERROR: 'danger',
 }
 
-PAGSEGURO_TOKEN = ''
-PAGSEGURO_EMAIL = 'contato@gilenofilho.com.br'
+PAGSEGURO_TOKEN = '54F506FB8E344997AFC4DC89EEC76A14'
+PAGSEGURO_EMAIL = 'yehiorglobal@gmail.com'
 PAGSEGURO_SANDBOX = True
 
 PAYPAL_TEST = True
-PAYPAL_EMAIL = 'contato@gilenofilho.com.br'
+PAYPAL_EMAIL = 'yehiorglobal@gmail.com'
 
 
 try:

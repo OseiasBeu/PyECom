@@ -16,7 +16,8 @@ Including another URLconf
 from django.conf.urls import url,include
 from django.contrib import admin
 from core import views
-from django.contrib.auth.views import login, logout
+# from django.contrib.auth.views
+from django.contrib.auth import login, logout
 
 
 urlpatterns = [
@@ -25,7 +26,9 @@ urlpatterns = [
     url(r'^entrar/$', login, {'template_name':'login.html'}, name='login'),
     url(r'^sair/$', logout, {'next_page':'index'}, name='logout'),  
     url(r'^catalogo/',include(('catalog.urls','products_list'), namespace='catalog')),
-    url(r'^conta/',include(('accounts.urls'), namespace='accounts')),
-    url(r'^compras/',include(('checkout.urls'), namespace='checkout')),
+    url(r'^conta/',include(('accounts.urls', 'accounts'), namespace='accounts')),
+    url(r'^compras/',include(('checkout.urls','checkout'), namespace='checkout')),
     url(r'^admin/', admin.site.urls),
 ]
+
+# url(r'^reviews/', include(('reviews.urls', 'reviews'), namespace='reviews')),

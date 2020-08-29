@@ -15,3 +15,4 @@ virtualenv==20.0.31
 whitenoise==3.2
 zipp==3.1.0
 pagseguro==0.3.4
+django-paypal==1.0.0

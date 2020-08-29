@@ -1,6 +1,7 @@
 #coding=utf-8
 from django.shortcuts import render
-from django.core.urlresolvers import reverse_lazy
+from django.urls import reverse_lazy
+# from django.core.urlresolvers import 
 from django.http import  HttpResponse
 from catalog.models import  Category
 from .forms import ContactForm

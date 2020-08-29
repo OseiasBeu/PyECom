@@ -29,7 +29,7 @@ class CartItem(models.Model):
     cart_key = models.CharField(
         'Chave do Carrinho', max_length=40, db_index=True
     )
-    product = models.ForeignKey('catalog.Product', verbose_name='Produto')
+    product = models.ForeignKey('catalog.Product', on_delete=models.CASCADE,verbose_name='Produto')
     quantity = models.PositiveIntegerField('Quantidade', default=1)
     price = models.DecimalField('Preço', decimal_places=2, max_digits=8)
 
@@ -70,7 +70,7 @@ class Order(models.Model):
         ('paypal', 'Paypal'),
     )
 
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name='Usuário')
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,verbose_name='Usuário')
     status = models.IntegerField(
         'Situação', choices=STATUS_CHOICES, default=0, blank=True
     )
@@ -161,8 +161,8 @@ class Order(models.Model):
 
 class OrderItem(models.Model):
 
-    order = models.ForeignKey(Order, verbose_name='Pedido', related_name='items')
-    product = models.ForeignKey('catalog.Product', verbose_name='Produto')
+    order = models.ForeignKey(Order, verbose_name='Pedido', on_delete=models.CASCADE,related_name='items')
+    product = models.ForeignKey('catalog.Product', on_delete=models.CASCADE,verbose_name='Produto')
     quantity = models.PositiveIntegerField('Quantidade', default=1)
     price = models.DecimalField('Preço', decimal_places=2, max_digits=8)
 
